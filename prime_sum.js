@@ -1,6 +1,6 @@
 function Sieve(n){
   prime = [];
-  for (var i=0; i<n+1; i++){
+  for (var i=2; i<n+1; i++){
     prime.push(true);
   }
   var p=2;
@@ -12,11 +12,13 @@ function Sieve(n){
     }
     p+=1;
   }
-  if (prime[n]){
-    console.log("y")
+  for (var k=2; k<=n; k++){
+  if (prime[k] && prime[n-k]){
+    console.log(k, n-k)
+    break
   }
-  else{
-    console.log("n")
   }
 }
-Sieve()
+var num = window.prompt()
+Sieve(num)
+
