@@ -4,13 +4,13 @@ function Sieve(n){
     prime.push(true);
   }
   var p=2;
-  while (p*p <= n){
+  while (p*p < n+1){
     if (prime[p] == true){
-      for (var j = p*p; j <n+1; j+=2){
+      for (var j = p*p; j < n+1; j+=p){
         prime[j] = false;
       }
-      p+=1
     }
+    p+=1;
   }
   if (prime[n]){
     console.log("y")
@@ -19,4 +19,4 @@ function Sieve(n){
     console.log("n")
   }
 }
-Sieve(11)
+Sieve()
